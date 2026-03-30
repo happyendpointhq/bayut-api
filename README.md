@@ -1107,12 +1107,8 @@ Yes - see the [bayut-api-postman-collection](https://github.com/yourusername/bay
 
 ## Related Resources
 
-- Python examples: [bayut-api-python-examples](https://github.com/yourusername/bayut-api-python-examples)
-- JavaScript / Next.js examples: [bayut-api-javascript-nextjs](https://github.com/yourusername/bayut-api-javascript-nextjs)
-- Postman collection: [bayut-api-postman-collection](https://github.com/yourusername/bayut-api-postman-collection)
-- Price tracker project: [dubai-property-price-tracker](https://github.com/yourusername/dubai-property-price-tracker)
-- Rental yield calculator: [dubai-rental-yield-calculator](https://github.com/yourusername/dubai-rental-yield-calculator)
-- UAE real estate data guide: [uae-real-estate-data-guide](https://github.com/yourusername/uae-real-estate-data-guide)
+- JavaScript / Next.js examples: [bayut-api-javascript-nextjs](https://github.com/happyendpointhq/bayut-api-javascript-nextjs)
+- Postman collection: [bayut-api-postman-collection](https://github.com/happyendpointhq/bayut-api-postman-collection)
 
 ---
 
