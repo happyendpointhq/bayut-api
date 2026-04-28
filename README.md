@@ -7,7 +7,7 @@
 
 Real-time access to Bayut property data - Dubai and UAE listings, off-plan projects, agents, agencies, developers, and transaction history. No scraping, no proxies, clean JSON.
 
-**RapidAPI:** https://rapidapi.com/happyendpoint/api/bayut14/
+**RapidAPI:** https://rapidapi.com/happyendpoint/api/uae-real-estate3/
 **Docs:** https://bayutapi.dev
 **Website:** https://happyendpoint.com/apis/bayut
 
@@ -106,14 +106,14 @@ This API handles all of that for you. You get clean, structured JSON data withou
 ### 1. Get your API key
 
 Subscribe on RapidAPI - free plan available:
-https://rapidapi.com/happyendpoint/api/bayut14/
+https://rapidapi.com/happyendpoint/api/uae-real-estate3/
 
 ### 2. Make your first request
 
 ```bash
 curl --request GET \
-  --url 'https://bayut14.p.rapidapi.com/health' \
-  --header 'x-rapidapi-host: bayut14.p.rapidapi.com' \
+  --url 'https://uae-real-estate3.p.rapidapi.com/health' \
+  --header 'x-rapidapi-host: uae-real-estate3.p.rapidapi.com' \
   --header 'x-rapidapi-key: YOUR_API_KEY'
 ```
 
@@ -126,8 +126,8 @@ Response:
 
 ```bash
 curl --request GET \
-  --url 'https://bayut14.p.rapidapi.com/search-property?purpose=for-sale&location_ids=5003&property_type=apartments&rooms=1&page=1' \
-  --header 'x-rapidapi-host: bayut14.p.rapidapi.com' \
+  --url 'https://uae-real-estate3.p.rapidapi.com/search-property?purpose=for-sale&location_ids=5003&property_type=apartments&rooms=1&page=1' \
+  --header 'x-rapidapi-host: uae-real-estate3.p.rapidapi.com' \
   --header 'x-rapidapi-key: YOUR_API_KEY'
 ```
 
@@ -141,17 +141,17 @@ All requests require two headers:
 
 ```
 x-rapidapi-key: YOUR_API_KEY
-x-rapidapi-host: bayut14.p.rapidapi.com
+x-rapidapi-host: uae-real-estate3.p.rapidapi.com
 ```
 
-Get your key by subscribing on RapidAPI: https://rapidapi.com/happyendpoint/api/bayut14/
+Get your key by subscribing on RapidAPI: https://rapidapi.com/happyendpoint/api/uae-real-estate3/
 
 ---
 
 ## Base URL
 
 ```
-https://bayut14.p.rapidapi.com
+https://uae-real-estate3.p.rapidapi.com
 ```
 
 ---
@@ -755,24 +755,24 @@ async function fetchWithRetry(url, options, maxRetries = 3) {
 **Search apartments for sale in Dubai Marina:**
 ```bash
 curl --request GET \
-  --url 'https://bayut14.p.rapidapi.com/search-property?purpose=for-sale&location_ids=5003&property_type=apartments&rooms=1,2&price_max=2000000&page=1' \
-  --header 'x-rapidapi-host: bayut14.p.rapidapi.com' \
+  --url 'https://uae-real-estate3.p.rapidapi.com/search-property?purpose=for-sale&location_ids=5003&property_type=apartments&rooms=1,2&price_max=2000000&page=1' \
+  --header 'x-rapidapi-host: uae-real-estate3.p.rapidapi.com' \
   --header 'x-rapidapi-key: YOUR_API_KEY'
 ```
 
 **Get location ID for an area:**
 ```bash
 curl --request GET \
-  --url 'https://bayut14.p.rapidapi.com/autocomplete?query=downtown+dubai&langs=en' \
-  --header 'x-rapidapi-host: bayut14.p.rapidapi.com' \
+  --url 'https://uae-real-estate3.p.rapidapi.com/autocomplete?query=downtown+dubai&langs=en' \
+  --header 'x-rapidapi-host: uae-real-estate3.p.rapidapi.com' \
   --header 'x-rapidapi-key: YOUR_API_KEY'
 ```
 
 **Get 12 months of transaction history:**
 ```bash
 curl --request GET \
-  --url 'https://bayut14.p.rapidapi.com/transactions?purpose=for-sale&location_ids=5003&time_period=12m&category_ids=apartments' \
-  --header 'x-rapidapi-host: bayut14.p.rapidapi.com' \
+  --url 'https://uae-real-estate3.p.rapidapi.com/transactions?purpose=for-sale&location_ids=5003&time_period=12m&category_ids=apartments' \
+  --header 'x-rapidapi-host: uae-real-estate3.p.rapidapi.com' \
   --header 'x-rapidapi-key: YOUR_API_KEY'
 ```
 
@@ -784,13 +784,13 @@ curl --request GET \
 import requests
 
 HEADERS = {
-    "x-rapidapi-host": "bayut14.p.rapidapi.com",
+    "x-rapidapi-host": "uae-real-estate3.p.rapidapi.com",
     "x-rapidapi-key": "YOUR_API_KEY"
 }
 
 # Step 1 - find location ID
 r = requests.get(
-    "https://bayut14.p.rapidapi.com/autocomplete",
+    "https://uae-real-estate3.p.rapidapi.com/autocomplete",
     params={"query": "dubai marina", "langs": "en"},
     headers=HEADERS
 )
@@ -799,7 +799,7 @@ location_id = r.json()["data"]["locations"][0]["externalID"]
 
 # Step 2 - search properties
 r = requests.get(
-    "https://bayut14.p.rapidapi.com/search-property",
+    "https://uae-real-estate3.p.rapidapi.com/search-property",
     params={
         "purpose": "for-sale",
         "location_ids": location_id,
@@ -830,7 +830,7 @@ for prop in data["properties"][:3]:
 ```javascript
 const API_KEY = "YOUR_API_KEY";
 const HEADERS = {
-  "x-rapidapi-host": "bayut14.p.rapidapi.com",
+  "x-rapidapi-host": "uae-real-estate3.p.rapidapi.com",
   "x-rapidapi-key": API_KEY
 };
 
@@ -845,7 +845,7 @@ async function searchProperties(locationId, purpose = "for-sale") {
   });
 
   const response = await fetch(
-    `https://bayut14.p.rapidapi.com/search-property?${params}`,
+    `https://uae-real-estate3.p.rapidapi.com/search-property?${params}`,
     { headers: HEADERS }
   );
 
@@ -856,7 +856,7 @@ async function searchProperties(locationId, purpose = "for-sale") {
 // Get location ID first
 async function getLocationId(query) {
   const response = await fetch(
-    `https://bayut14.p.rapidapi.com/autocomplete?query=${encodeURIComponent(query)}&langs=en`,
+    `https://uae-real-estate3.p.rapidapi.com/autocomplete?query=${encodeURIComponent(query)}&langs=en`,
     { headers: HEADERS }
   );
   const json = await response.json();
@@ -877,12 +877,12 @@ console.log(`${data.total} properties found`);
 
 $apiKey = "YOUR_API_KEY";
 $headers = [
-    "x-rapidapi-host: bayut14.p.rapidapi.com",
+    "x-rapidapi-host: uae-real-estate3.p.rapidapi.com",
     "x-rapidapi-key: $apiKey"
 ];
 
 function bayutRequest($path, $params, $headers) {
-    $url = "https://bayut14.p.rapidapi.com" . $path . "?" . http_build_query($params);
+    $url = "https://uae-real-estate3.p.rapidapi.com" . $path . "?" . http_build_query($params);
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -917,14 +917,14 @@ Keep your API key server-side. Never expose it in client components.
 ```javascript
 // lib/bayut.js
 export async function searchProperties(params) {
-  const url = new URL("https://bayut14.p.rapidapi.com/search-property");
+  const url = new URL("https://uae-real-estate3.p.rapidapi.com/search-property");
   Object.entries(params).forEach(([k, v]) => {
     if (v != null) url.searchParams.set(k, v);
   });
 
   const res = await fetch(url.toString(), {
     headers: {
-      "x-rapidapi-host": "bayut14.p.rapidapi.com",
+      "x-rapidapi-host": "uae-real-estate3.p.rapidapi.com",
       "x-rapidapi-key": process.env.RAPIDAPI_KEY  // server-side only
     },
     next: { revalidate: 300 }  // cache for 5 minutes
@@ -1044,7 +1044,7 @@ The API is available on RapidAPI with multiple plans:
 - **Free plan** - limited requests per month, enough to prototype and test
 - **Paid plans** - higher rate limits for production use
 
-Subscribe here: https://rapidapi.com/happyendpoint/api/bayut14/
+Subscribe here: https://rapidapi.com/happyendpoint/api/uae-real-estate3/
 
 ---
 
@@ -1101,7 +1101,7 @@ Yes. The API covers the whole UAE. Use `/autocomplete` to find location IDs for 
 
 **Do you offer a Postman collection?**
 
-Yes - see the [bayut-api-postman-collection](https://github.com/yourusername/bayut-api-postman-collection) repo.
+Yes - see the [bayut-api-postman-collection](https://github.com/happyendpointhq/bayut-api-postman-collection) repo.
 
 ---
 
@@ -1114,7 +1114,7 @@ Yes - see the [bayut-api-postman-collection](https://github.com/yourusername/bay
 
 ## Links
 
-- API on RapidAPI: https://rapidapi.com/happyendpoint/api/bayut14/
+- API on RapidAPI: https://rapidapi.com/happyendpoint/api/uae-real-estate3/
 - API landing page: https://happyendpoint.com/apis/bayut
 - Full documentation: https://bayutapi.dev
 - Happy Endpoint: https://happyendpoint.com
