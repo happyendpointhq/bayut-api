@@ -9,7 +9,7 @@ Real-time access to Bayut property data - Dubai and UAE listings, off-plan proje
 
 **RapidAPI:** https://rapidapi.com/happyendpoint/api/uae-real-estate3/
 **Docs:** https://bayutapi.dev
-**Website:** https://happyendpoint.com/apis/bayut
+**Website:** https://happyendpoint.com/library/bayut-api
 
 ---
 
@@ -1057,7 +1057,7 @@ If you need large-scale historical data beyond what the real-time API provides, 
 - Suitable for ML model training, econometric analysis, and large-scale research
 
 Contact: happyendpointhq@gmail.com
-Website: https://happyendpoint.com/apis/bayut
+Website: https://happyendpoint.com/library/bayut-api
 
 ---
 
@@ -1115,7 +1115,7 @@ Yes - see the [bayut-api-postman-collection](https://github.com/happyendpointhq/
 ## Links
 
 - API on RapidAPI: https://rapidapi.com/happyendpoint/api/uae-real-estate3/
-- API landing page: https://happyendpoint.com/apis/bayut
+- API landing page: https://happyendpoint.com/library/bayut-api
 - Full documentation: https://bayutapi.dev
 - Happy Endpoint: https://happyendpoint.com
 - All APIs: https://rapidapi.com/user/happyendpoint
@@ -1123,8 +1123,63 @@ Yes - see the [bayut-api-postman-collection](https://github.com/happyendpointhq/
 - Medium: https://medium.com/@happyendpointhq
 - Email: happyendpointhq@gmail.com
 
+
 ---
 
-## License
+## Using this API from Claude, Cursor, or another MCP client
 
-MIT
+RapidAPI hosts an MCP server, so you can query this API from an AI assistant
+without writing any code:
+
+```json
+{
+  "mcpServers": {
+    "Bayut UAE Real Estate": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://mcp.rapidapi.com",
+        "--header",
+        "x-api-host: uae-real-estate3.p.rapidapi.com",
+        "--header",
+        "x-api-key: YOUR_RAPIDAPI_KEY"
+      ]
+    }
+  }
+}
+```
+
+| Client | Config path |
+|---|---|
+| Claude Desktop (macOS) | `~/Library/Application Support/Claude/claude_desktop_config.json` |
+| Claude Desktop (Windows) | `%APPDATA%\Claude\claude_desktop_config.json` |
+| Cursor | `~/.cursor/mcp.json` |
+| Claude Code | `.mcp.json` in your project root |
+
+---
+
+## Related repos
+
+- [bayut-api-python-examples](https://github.com/happyendpointhq/bayut-api-python-examples) - Python client and nine runnable examples
+- [bayut-api-javascript-nextjs](https://github.com/happyendpointhq/bayut-api-javascript-nextjs) - working Next.js 15 app
+- [bayut-api-postman-collection](https://github.com/happyendpointhq/bayut-api-postman-collection) - every endpoint, no code required
+- [dubai-rental-yield-calculator](https://github.com/happyendpointhq/dubai-rental-yield-calculator) - gross and net yields by area
+- [dubai-property-price-tracker](https://github.com/happyendpointhq/dubai-property-price-tracker) - scheduled price monitoring
+- [propertyfinder-api](https://github.com/happyendpointhq/propertyfinder-api) - the other major UAE portal
+
+---
+
+## About Happy Endpoint
+
+[Happy Endpoint](https://happyendpoint.com) builds and maintains real-time data
+APIs for property portals, retailers, and marketplaces. All APIs are available on
+RapidAPI with a free tier.
+
+- Catalogue: [happyendpoint.com/library](https://happyendpoint.com/library)
+- Datasets: [happyendpoint.com/datasets](https://happyendpoint.com/datasets)
+- Documentation: [docs.happyendpoint.com](https://docs.happyendpoint.com)
+- Contact: happyendpointhq@gmail.com
+
+## Licence
+
+MIT. See [LICENSE](LICENSE).
